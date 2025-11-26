@@ -10,10 +10,33 @@
 
   body {
     font-family: 'Inter', sans-serif;
-    background: #0d0d0f;
+
+    /* New background: soft romantic gradient */
+    background: radial-gradient(circle at top, #1b1b22 0%, #0d0d0f 50%, #0a0a0c 100%);
     color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Floating animated icons */
+  .float-icon {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.22;
+    animation: floatUp 8s linear infinite;
+  }
+
+  .float-icon:nth-child(1) { left: 15%; animation-delay: 0s; }
+  .float-icon:nth-child(2) { left: 40%; animation-delay: 2s; }
+  .float-icon:nth-child(3) { left: 65%; animation-delay: 4s; }
+  .float-icon:nth-child(4) { left: 80%; animation-delay: 1s; }
+  .float-icon:nth-child(5) { left: 25%; animation-delay: 3s; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(40vh) scale(1); opacity: 0.12; }
+    50% { transform: translateY(-10vh) scale(1.3); opacity: 0.25; }
+    100% { transform: translateY(-45vh) scale(1); opacity: 0; }
   }
 
   .hero {
@@ -21,6 +44,8 @@
     max-width: 500px;
     margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 10;
   }
 
   .hero h1 {
@@ -100,6 +125,13 @@
 </head>
 
 <body>
+
+<!-- Floating icons layer -->
+<div class="float-icon">💗</div>
+<div class="float-icon">💞</div>
+<div class="float-icon">💖</div>
+<div class="float-icon">💘</div>
+<div class="float-icon">💓</div>
 
 <div class="hero">
 
