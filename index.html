@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Your Relationship | Exclusive Guide</title>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0d0d0f;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .sub {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    margin-bottom: 35px;
+  }
+
+  .box p { opacity: 0.85; line-height: 1.5; }
+
+  .btn {
+    background: linear-gradient(90deg,#ff4f73,#ff784d);
+    padding: 18px;
+    display: block;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255,79,115,0.4);
+    margin-top: 25px;
+    animation: pulse 1.8s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    60% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+
+  .timer {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: 15px;
+  }
+
+  .checked-links {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.8;
+  }
+
+  .checked-links a {
+    color: #ff6f96;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    opacity: 0.4;
+    font-size: 0.85rem;
+    margin-top: 40px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+  <h1>How to Save Your Relationship</h1>
+  <p class="sub">Reignite love, rebuild trust, and understand your partner better with this emotional deep-dive guide.</p>
+
+  <div class="box">
+    <p><strong>By Isaac Calf | PiquePassion</strong></p>
+    <p style="margin-top:10px;">"Dedicated to everyone fighting for love, understanding, and connection. May this guide help you find clarity and heal together."</p>
+  </div>
+
+  <div class="box">
+    <p>Before accessing your guide, confirm you're human. This prevents spam downloads and keeps the project alive.</p>
+
+    <a href="https://applocked.org/cl/i/82dqmr" class="btn">Unlock PDF Now</a>
+
+    <p class="timer" id="timerBox">Offer expires in 09:59</p>
+
+    <div class="checked-links">
+      <p>Readers also loved:</p>
+      <a href="#">Relationship Rewrite Method</a><br>
+      <a href="#">Make Him Worship You</a><br>
+      <a href="#">His Secret Obsession</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2025 PiquePassion. All Rights Reserved.</footer>
+
+<script>
+  let time = 599;
+
+  function countdown() {
+    const min = String(Math.floor(time / 60)).padStart(2,'0');
+    const sec = String(time % 60).padStart(2,'0');
+    document.getElementById("timerBox").innerText = `Offer expires in ${min}:${sec}`;
+    if (time > 0) { time--; setTimeout(countdown, 1000); }
+  }
+
+  countdown();
+</script>
+
+</body>
+</html>
