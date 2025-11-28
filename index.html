@@ -66,6 +66,7 @@
     20%, 40%, 60%, 80% { transform: translateX(3px); }
   }
 
+  /* Hero section */
   .hero {
     padding: 60px 20px 40px;
     max-width: 520px;
@@ -73,9 +74,15 @@
     text-align: center;
     position: relative;
     z-index: 10;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInHero 0.8s forwards 0.2s;
   }
 
-  /* Glowing emoji */
+  @keyframes fadeInHero {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .emoji-hero {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -109,7 +116,6 @@
     font-weight: 400;
   }
 
-  /* Social proof counter */
   .social-proof {
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.12);
@@ -156,7 +162,38 @@
     font-weight: 700;
   }
 
-  /* Enhanced CTA button */
+  /* Benefits */
+  .benefits { text-align: left; margin: 25px 0; padding: 0; }
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(255,111,150,0.08);
+    border-radius: 10px;
+    border-left: 3px solid #ff6f96;
+    transition: all 0.3s ease;
+  }
+  .benefit-item:hover {
+    background: rgba(255,111,150,0.15);
+    transform: translateX(5px);
+  }
+  .benefit-icon { font-size: 1.5rem; flex-shrink: 0; animation: pulseIcon 2s ease-in-out infinite; }
+  @keyframes pulseIcon {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .benefit-text { font-size: 0.95rem; opacity: 0.9; line-height: 1.5; }
+
+  .checked-links { margin-top: 25px; text-align: left; font-size: 0.95rem; opacity: 0.85; line-height: 2; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; }
+  .checked-links p { font-weight: 600; margin-bottom: 12px; color: #ff6f96; }
+  .checked-links a { color: #ffd4e5; font-weight: 500; text-decoration: none; transition: all 0.2s ease; display: inline-block; padding-left: 20px; position: relative; }
+  .checked-links a::before { content: '→'; position: absolute; left: 0; transition: left 0.2s ease; }
+  .checked-links a:hover { color: #ff6f96; transform: translateX(3px); }
+  .checked-links a:hover::before { left: 5px; }
+
+  /* CTA Button */
   .btn {
     background: linear-gradient(135deg, #ff4f73 0%, #ff784d 100%);
     padding: 22px 30px;
@@ -174,8 +211,8 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    animation: pulse 2.5s ease-in-out infinite;
   }
-
   .btn::before {
     content: '';
     position: absolute;
@@ -186,168 +223,25 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: left 0.5s;
   }
-
-  .btn:hover::before {
-    left: 100%;
-  }
-
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(255,79,115,0.7);
-  }
-
-  .btn:active {
-    transform: translateY(-1px);
-  }
-
-  /* Pulsing effect */
+  .btn:hover::before { left: 100%; }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(255,79,115,0.7); }
+  .btn:active { transform: translateY(-1px); }
   @keyframes pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 6px 25px rgba(255,79,115,0.5); }
+    0%,100% { transform: scale(1); box-shadow: 0 6px 25px rgba(255,79,115,0.5); }
     50% { transform: scale(1.03); box-shadow: 0 8px 35px rgba(255,79,115,0.7); }
   }
 
-  .btn {
-    animation: pulse 2.5s ease-in-out infinite;
-  }
+  .timer { font-size: 1rem; opacity: 0.95; margin-top: 18px; color: #ffb3c6; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; animation: timerPulse 1s infinite; }
+  .timer::before { content: '⏰'; font-size: 1.2rem; }
+  @keyframes timerPulse { 0%,100% { color: #ffb3c6; } 50% { color: #ff4f73; } }
 
-  .timer {
-    font-size: 1rem;
-    opacity: 0.95;
-    margin-top: 18px;
-    color: #ffb3c6;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
+  .testimonial { background: linear-gradient(135deg, rgba(255,79,115,0.15), rgba(255,120,77,0.15)); border: 1px solid rgba(255,111,150,0.3); padding: 20px; border-radius: 16px; margin: 25px 0; font-style: italic; position: relative; }
+  .testimonial::before { content: '"'; font-size: 4rem; position: absolute; top: -10px; left: 10px; color: rgba(255,111,150,0.3); font-family: Georgia, serif; }
+  .testimonial p { margin-bottom: 10px; padding-left: 20px; }
+  .testimonial .author { text-align: right; font-weight: 600; color: #ff6f96; font-style: normal; }
 
-  .timer::before {
-    content: '⏰';
-    font-size: 1.2rem;
-  }
+  footer { text-align: center; padding: 30px 20px; opacity: 0.4; font-size: 0.85rem; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-  /* Benefits list */
-  .benefits {
-    text-align: left;
-    margin: 25px 0;
-    padding: 0;
-  }
-
-  .benefit-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 15px;
-    padding: 12px;
-    background: rgba(255,111,150,0.08);
-    border-radius: 10px;
-    border-left: 3px solid #ff6f96;
-    transition: all 0.3s ease;
-  }
-
-  .benefit-item:hover {
-    background: rgba(255,111,150,0.15);
-    transform: translateX(5px);
-  }
-
-  .benefit-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .benefit-text {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    line-height: 1.5;
-  }
-
-  .checked-links {
-    margin-top: 25px;
-    text-align: left;
-    font-size: 0.95rem;
-    opacity: 0.85;
-    line-height: 2;
-    padding: 20px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-  }
-
-  .checked-links p {
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #ff6f96;
-  }
-
-  .checked-links a {
-    color: #ffd4e5;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .checked-links a::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    transition: left 0.2s ease;
-  }
-
-  .checked-links a:hover {
-    color: #ff6f96;
-    transform: translateX(3px);
-  }
-
-  .checked-links a:hover::before {
-    left: 5px;
-  }
-
-  /* Testimonial section */
-  .testimonial {
-    background: linear-gradient(135deg, rgba(255,79,115,0.15), rgba(255,120,77,0.15));
-    border: 1px solid rgba(255,111,150,0.3);
-    padding: 20px;
-    border-radius: 16px;
-    margin: 25px 0;
-    font-style: italic;
-    position: relative;
-  }
-
-  .testimonial::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    color: rgba(255,111,150,0.3);
-    font-family: Georgia, serif;
-  }
-
-  .testimonial p {
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-
-  .testimonial .author {
-    text-align: right;
-    font-weight: 600;
-    color: #ff6f96;
-    font-style: normal;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    opacity: 0.4;
-    font-size: 0.85rem;
-    margin-top: 50px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  /* Responsive */
   @media (max-width: 480px) {
     .hero h1 { font-size: 2.2rem; }
     .emoji-hero { font-size: 3rem; }
@@ -358,10 +252,8 @@
 
 <body>
 
-<!-- Urgent badge -->
 <div class="urgent-badge">🔥 Limited Time</div>
 
-<!-- Floating hearts -->
 <div class="float-icon">💗</div>
 <div class="float-icon">💞</div>
 <div class="float-icon">💖</div>
@@ -370,7 +262,6 @@
 <div class="float-icon">❤️</div>
 
 <div class="hero">
-
   <div class="emoji-hero">💝</div>
 
   <h1>Save Your Relationship Before It's Too Late</h1>
@@ -388,24 +279,11 @@
 
   <div class="box">
     <h3 style="margin-bottom: 15px; font-size: 1.3rem; color: #ff6f96;">What You'll Learn:</h3>
-    
     <div class="benefits">
-      <div class="benefit-item">
-        <div class="benefit-icon">💬</div>
-        <div class="benefit-text"><strong>Communication Secrets</strong> that eliminate arguments and create understanding</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🔥</div>
-        <div class="benefit-text"><strong>Reignite Passion</strong> with proven techniques to bring back the spark</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🛡️</div>
-        <div class="benefit-text"><strong>Rebuild Trust</strong> even after betrayal or hurt</div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">❤️</div>
-        <div class="benefit-text"><strong>Deepen Your Bond</strong> and create lasting emotional intimacy</div>
-      </div>
+      <div class="benefit-item"><div class="benefit-icon">💬</div><div class="benefit-text"><strong>Communication Secrets</strong> that eliminate arguments and create understanding</div></div>
+      <div class="benefit-item"><div class="benefit-icon">🔥</div><div class="benefit-text"><strong>Reignite Passion</strong> with proven techniques to bring back the spark</div></div>
+      <div class="benefit-item"><div class="benefit-icon">🛡️</div><div class="benefit-text"><strong>Rebuild Trust</strong> even after betrayal or hurt</div></div>
+      <div class="benefit-item"><div class="benefit-icon">❤️</div><div class="benefit-text"><strong>Deepen Your Bond</strong> and create lasting emotional intimacy</div></div>
     </div>
 
     <div class="testimonial">
@@ -414,8 +292,8 @@
     </div>
 
     <p style="margin-top: 20px; font-weight: 600;">⚠️ To prevent spam and keep this guide free, please verify you're human:</p>
-
     <a href="https://applocked.org/cl/i/82dqmr" class="btn">🔓 Unlock Your Free Guide Now</a>
+    <p class="sub" style="margin-top:8px; font-size:0.9rem;">No credit card required • Instant access</p>
 
     <p class="timer" id="timerBox">Offer expires in 09:59</p>
 
@@ -427,30 +305,21 @@
       <a href="#">Text Chemistry</a>
     </div>
   </div>
-
 </div>
 
 <footer>© 2025 PiquePassion. All Rights Reserved. This guide is for educational purposes.</footer>
 
 <script>
-  // Timer countdown
   let time = 599;
-
   function countdown() {
     const min = String(Math.floor(time / 60)).padStart(2,'0');
     const sec = String(time % 60).padStart(2,'0');
     document.getElementById("timerBox").innerHTML = `Offer expires in <strong>${min}:${sec}</strong>`;
-    if (time > 0) { 
-      time--; 
-      setTimeout(countdown, 1000); 
-    } else {
-      document.getElementById("timerBox").innerHTML = '⚠️ <strong>Offer Expired!</strong>';
-    }
+    if (time > 0) { time--; setTimeout(countdown, 1000); }
+    else { document.getElementById("timerBox").innerHTML = '⚠️ <strong>Offer Expired!</strong>'; }
   }
-
   countdown();
 
-  // Fluctuating reader count
   function updateReaderCount() {
     const countEl = document.getElementById('readerCount');
     let current = parseInt(countEl.innerText.replace(',', ''));
@@ -459,9 +328,7 @@
     countEl.innerText = current.toLocaleString();
     setTimeout(updateReaderCount, 3000 + Math.random() * 2000);
   }
-
   setTimeout(updateReaderCount, 2000);
 </script>
-
 </body>
 </html>
